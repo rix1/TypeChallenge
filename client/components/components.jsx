@@ -10,20 +10,27 @@ MainLayout = React.createClass({
     }
 });
 
-Footer = React.createClass({
+Welcome = React.createClass({
 
-    love(){
-        return "Eg <3 Meteor";
+    getInitialState() {
+        return {
+            error : ""
+        };
     },
 
-    render() {
-        return <div className="footer">
-            <p>{this.love()}</p>
-        </div>
-    }
-});
+    go(){
+        var text = React.findDOMNode(this.refs.nick).value.trim();
+        if(text.length < 1){
+            //throw new Error("Something!");
+            this.setState({
+                error: "Hold on cowboy! you need a name, son!"
+            });
+        }else{
+            console.log(text);
+            FlowRouter.go("/menu")
+        }
+    },
 
-Welcome = React.createClass({
     render() {
         return <div className="content">
             <div className="welcometext">
@@ -31,9 +38,9 @@ Welcome = React.createClass({
                 <h3>Welcome to this super fun typing game where you compete with friends and foes.
                     Pick a nick and prepeare for war!</h3>
             </div>
-            <input className="input-big" type="text" placeholder="Pick a nick!"/>
-            <button onsubmit="" className="btn-big">Go!</button>
-            <h3 className="err">Hold on cowboy! you need a name, son!</h3>
+            <input className="input-big" ref="nick" type="text" placeholder="Pick a nick!"/>
+            <button onClick={this.go} className="btn-big">Go!</button>
+            <h3 className="err">{this.state.error}</h3>
         </div>
     }
 });

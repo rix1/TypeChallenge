@@ -1,7 +1,7 @@
 FlowRouter.route('/', {
     action: function (param, queryParam) {
         console.log("home");
-        ReactLayout.render(MainLayout, {footer: <Footer />});
+        ReactLayout.render(MainLayout, { content: <Welcome />, footer: <Footer />});
     },
     name: "home"
 });
@@ -17,6 +17,6 @@ FlowRouter.notFound = {
 
     },
     action() {
-        console.log("404! NOT FOUND ");
+        ReactLayout.render(MainLayout, {content: <NotFound />});
     }
 };
