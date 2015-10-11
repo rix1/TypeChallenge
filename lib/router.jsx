@@ -12,9 +12,10 @@ FlowRouter.route('/home', {
     }
 });
 
-FlowRouter.route('/menu', {
-    action(params) {
-        ReactLayout.render(MainLayout, {content: <Menu />});
+FlowRouter.route('/user/:userId', {
+    action(params, queryparam) {
+        console.log(params.userId);
+        ReactLayout.render(MainLayout, {content: <Menu user={params.userId} />});
     }
 });
 

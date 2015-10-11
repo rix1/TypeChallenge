@@ -21,7 +21,7 @@ NotFound = React.createClass({
 Footer = React.createClass({
 
     love(){
-        return "Eg <3 Meteor";
+        return "Made with <3 and Meteor";
     },
 
     render() {

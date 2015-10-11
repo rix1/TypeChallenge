@@ -17,14 +17,19 @@ Welcome = React.createClass({
         };
     },
 
-    //mixins: [ReactMeteorData],
+    mixins: [ReactMeteorData],
 
-    createUser(nick){
-        var test = Users.insert({
+    getMeteorData() {
+        return {
+            users: Users.find({}).fetch()
+        }
+    },
+
+    createUser(nick) {
+        return Users.insert({
             name: nick,
             createdAt: new Date()
         });
-        console.log(test);
     },
 
     go(){
@@ -35,9 +40,9 @@ Welcome = React.createClass({
                 error: "Hold on cowboy! You need a name, son!"
             });
         }else{
-            console.log(text);
-            //createUser(text);
-            FlowRouter.go("/menu")
+            //console.l-og(text);
+            let id = this.createUser(text);
+            FlowRouter.go("/user/" + id);
         }
     },
 
@@ -56,12 +61,15 @@ Welcome = React.createClass({
     }
 });
 
-
 Menu = React.createClass({
 
     getInitialState() {
         return {
         };
+    },
+
+    getName(){
+        return Users.find({_id:this.props.user}).fetch()[0].name;
     },
 
     go(){
@@ -72,7 +80,7 @@ Menu = React.createClass({
     render() {
         return <div className="content">
             <div className="welcometext">
-                <h1>Welcome, Rix1!</h1>
+                <h1>Welcome, {this.getName()}!</h1>
                 <h3>Pick a game type from the menu below:</h3>
             </div>
             <button onClick={this.go} className="btn-big">Create Game</button>
