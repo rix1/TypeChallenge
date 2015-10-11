@@ -14,6 +14,13 @@ p{
   font-family: "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
 }
 
+*::selection {
+  background: screen(yellow, @r-pink); /* WebKit/Blink Browsers */
+}
+*::-moz-selection {
+  background: screen(yellow, @r-pink); /* WebKit/Blink Browsers */
+}
+
 body{
   display: block;
 }
@@ -22,6 +29,7 @@ body{
   position: relative;
   color: fade(@default, 40%);
   font-style: italic;
+  font-weight: 700;
   bottom: 0;
   width: 100%;
   left: 0;

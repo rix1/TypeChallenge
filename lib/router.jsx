@@ -7,8 +7,14 @@ FlowRouter.route('/', {
 });
 
 FlowRouter.route('/home', {
-    action(params) {
+    action(params, queryParams) {
         ReactLayout.render(MainLayout, {content: <Welcome />});
+    }
+});
+
+FlowRouter.route('/menu', {
+    action(params) {
+        ReactLayout.render(MainLayout, {content: <Menu />});
     }
 });
 
