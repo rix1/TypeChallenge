@@ -1,0 +1,125 @@
+/* CSS declarations go here */
+html,
+body {
+  font-family: "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
+  color: #1B2432;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+p {
+  font-family: "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
+}
+body {
+  display: block;
+}
+.footer {
+  position: relative;
+  color: rgba(27, 36, 50, 0.4);
+  font-style: italic;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  text-align: center;
+}
+.footer:before {
+  content: "";
+  border: 0;
+  width: 50px;
+  height: 1px;
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  background-color: rgba(255, 255, 0, 0.8);
+}
+#wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fc7279;
+  background-image: linear-gradient(to top right, #fc7279 20%, #36B1BF 65%, #4AD9D9 105%);
+  flex-direction: column;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+}
+.content {
+  width: 60vw;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.input-big {
+  font-family: "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  width: 100%;
+  font-size: 2.5em;
+  font-style: normal;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 4px rgba(255, 255, 0, 0.3);
+}
+.err {
+  color: #7e393d;
+  text-align: center;
+}
+input:focus {
+  outline: none;
+  border-bottom-color: white    ;
+}
+button {
+  background-color: yellow;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 8px 30px;
+  margin: 10px;
+  color: dimgray;
+  font-family: "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  border: 3px solid transparent;
+  box-shadow: 10px 10px #4b4b4b;
+}
+button:focus {
+  outline: none;
+  border: 3px solid white;
+}
+button:active {
+  background-color: #a5a526;
+  box-shadow: 5px 5px #4b4b4b;
+}
+.btn-big {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: 500;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+::-webkit-input-placeholder {
+  color: rgba(252, 252, 252, 0.4);
+  font-style: italic;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #fcfcfc;
+  font-style: italic;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #fcfcfc;
+  font-style: italic;
+}
+:-ms-input-placeholder {
+  color: #fcfcfc;
+  font-style: italic;
+}
+.welcometext {
+  text-align: center;
+}
+.welcometext h1 {
+  font-size: 3em;
+  color: white;
+}
+h1 ~ h3 {
+  font-style: italic;
+  color: rgba(27, 36, 50, 0.8);
+}

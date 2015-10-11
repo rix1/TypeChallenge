@@ -1,0 +1,153 @@
+/* CSS declarations go here */
+
+html, body {
+  font-family: "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
+  color: @default;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+p{
+  font-family: "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
+}
+
+body{
+  display: block;
+}
+
+.footer{
+  position: relative;
+  color: fade(@default, 40%);
+  font-style: italic;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  text-align: center;
+
+  &:before{
+    content: "";
+    border: 0;
+    width: 50px;
+    height: 1px;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    background-color: fade(yellow,80%);
+  }
+}
+
+#wrapper{
+  display: flex;
+  min-height: 100vh;
+  background-color: #fc7279;
+  //background-image: -webkit-gradient(bottom left, blue 10%, red 65%, green 125%);
+  //background-image: linear-gradient(to top right, #4AD9D9, #36B1BF, #fc7279 105%);
+  background-image: linear-gradient(to top right, #fc7279 20%, #36B1BF 65%, #4AD9D9 105%);
+  //background-image: linear-gradient(to top right, #4AD9D9, #36B1BF, #4AD9D9 105%);
+  //background-image: linear-gradient(to top right,#fc7279 10%, #ff7b9c 65%, #ffc019 125%);
+  //background-image: linear-gradient(to top right, blue 10%, red 100%, green 10%);
+  flex-direction: column;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+}
+
+
+.content{
+  width: 60vw;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.input-big{
+  font-family: "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  width: 100%;
+  font-size: 2.5em;
+  font-style: normal;
+
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 4px fade(yellow, 30%);
+
+}
+
+.err{
+  color: average(@r-pink, black);
+  text-align: center;
+}
+
+input:focus{
+  outline: none;
+  border-bottom-color: white    ;
+}
+
+button{
+  background-color: yellow;
+  border: 1px solid fade(black, 10%);
+  padding: 8px 30px;
+  margin: 10px;
+  color: dimgray;
+  font-family: "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  border: 3px solid transparent;
+
+
+  &:focus{
+    outline: none;
+    border: 3px solid white;
+  }
+
+  &:active{
+    background-color: average(@grey-dark, yellow);
+    box-shadow: 5px 5px @grey-dark;
+  }
+  box-shadow: 10px 10px @grey-dark;
+}
+
+.btn-big{
+  font-size: 28px;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: 500;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+::-webkit-input-placeholder{
+  color: fade(#fcfcfc, 40%);
+  font-style: italic;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #fcfcfc;
+  font-style: italic;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #fcfcfc;
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  color: #fcfcfc;
+  font-style: italic;
+}
+
+
+.welcometext{
+  text-align: center;
+
+  h1{
+    font-size: 3em;
+    color: white;
+  }
+}
+
+h1 ~ h3{
+  font-style: italic;
+  color: fade(#1B2432, 80%);
+}
